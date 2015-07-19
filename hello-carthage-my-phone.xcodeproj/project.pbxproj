@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D47CD6B1B5B14A000CB3D5A /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D47CD6A1B5B14A000CB3D5A /* Cartfile */; };
+		7D47CD6D1B5B154E00CB3D5A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D47CD6C1B5B154E00CB3D5A /* SwiftyJSON.framework */; };
 		7D522BC91B59B1AB007E2DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D522BC81B59B1AB007E2DB0 /* AppDelegate.swift */; };
 		7D522BCB1B59B1AB007E2DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D522BCA1B59B1AB007E2DB0 /* ViewController.swift */; };
 		7D522BCE1B59B1AB007E2DB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D522BCC1B59B1AB007E2DB0 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D47CD6A1B5B14A000CB3D5A /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		7D47CD6C1B5B154E00CB3D5A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7D522BC31B59B1AB007E2DB0 /* hello-carthage-my-phone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hello-carthage-my-phone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D522BC71B59B1AB007E2DB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D522BC81B59B1AB007E2DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D47CD6D1B5B154E00CB3D5A /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +64,8 @@
 		7D522BBA1B59B1AB007E2DB0 = {
 			isa = PBXGroup;
 			children = (
+				7D47CD6C1B5B154E00CB3D5A /* SwiftyJSON.framework */,
+				7D47CD6A1B5B14A000CB3D5A /* Cartfile */,
 				7D522BC51B59B1AB007E2DB0 /* hello-carthage-my-phone */,
 				7D522BDB1B59B1AB007E2DB0 /* hello-carthage-my-phoneTests */,
 				7D522BC41B59B1AB007E2DB0 /* Products */,
@@ -122,6 +129,7 @@
 				7D522BBF1B59B1AB007E2DB0 /* Sources */,
 				7D522BC01B59B1AB007E2DB0 /* Frameworks */,
 				7D522BC11B59B1AB007E2DB0 /* Resources */,
+				7D47CD6E1B5B155A00CB3D5A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -194,6 +202,7 @@
 			files = (
 				7D522BCE1B59B1AB007E2DB0 /* Main.storyboard in Resources */,
 				7D522BD31B59B1AB007E2DB0 /* LaunchScreen.xib in Resources */,
+				7D47CD6B1B5B14A000CB3D5A /* Cartfile in Resources */,
 				7D522BD01B59B1AB007E2DB0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +215,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D47CD6E1B5B155A00CB3D5A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D522BBF1B59B1AB007E2DB0 /* Sources */ = {
@@ -342,6 +368,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "hello-carthage-my-phone/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -353,6 +383,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "hello-carthage-my-phone/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
