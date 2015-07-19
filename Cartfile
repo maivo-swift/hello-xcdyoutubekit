@@ -5,4 +5,4 @@
 github "SwiftyJSON/SwiftyJSON" >= 2.1.2
 
 # XCDYouTubeKit
-# github "0xced/XCDYouTubeKit" ~> 2.2.0
+github "0xced/XCDYouTubeKit" ~> 2.2.0
